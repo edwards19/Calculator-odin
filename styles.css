@@ -1,0 +1,97 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: linear-gradient(90deg, rgba(77, 83, 119, 1) 0%, rgba(129, 137, 159, 1) 100%); */
+  background-color: rgb(142, 144, 144);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  height: 500px;
+  width: 320px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgba(206, 206, 249, 0.71);
+  border: 3px solid black;
+}
+
+button {
+  border: 1px solid black;
+  transition: background-color 0.10s;
+  font-size: 20px;
+}
+
+.display {
+  grid-column: 1/5;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0 15px;
+}
+
+.previous {
+  font-size: 18px;
+}
+
+.current {
+  font-size: 20px;
+}
+
+.clear, .equals {
+  grid-column: span 2;
+}
+
+.number, .decimal {
+  background-color: transparent;
+}
+
+.number:hover, .decimal:hover {
+  background-color: rgba(184, 184, 223, 0.71)
+}
+
+.operator {
+  background-color: rgb(182, 195, 231);
+}
+
+.operator:hover {
+  background-color: rgb(170, 181, 215);
+}
+
+.clear, .delete {
+  background-color: rgb(213, 203, 237);
+  font-size: 18px;
+}
+
+.clear:hover,
+.delete:hover {
+  background-color: rgb(200, 191, 223);
+}
+
+.equals {
+  background-color: rgb(181, 212, 187);
+  font-size: 30px;
+}
+
+.equals:hover {
+  background-color: rgb(162, 196, 169);
+}
+
+
+
