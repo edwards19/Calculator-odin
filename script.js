@@ -30,7 +30,15 @@ operators.forEach((op) => {
 })
 
 equals.addEventListener('click', () => {
-  calculate()
+  if(currentValue != '' && previousValue != ''){
+    calculate()
+    previousDisplay.textContent = '0';
+    if (previousValue.length <= 15) {
+      currentDisplay.textContent = previousValue;
+    } else {
+      currentDisplay.textContent = previousValue.slice(0, 14) + '...';
+    }
+  }
 })
 
 clear.addEventListener(('click'), () => {
@@ -86,17 +94,6 @@ function calculate(){
 function roundNumber(num){
   return Math.round(num * 1000) / 1000;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 function add(a, b){
   return a + b
