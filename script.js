@@ -31,7 +31,7 @@ operators.forEach((op) => {
 
 equals.addEventListener('click', () => {
   if(currentValue != '' && previousValue != ''){
-    calculate()
+    calculate();
     previousDisplay.textContent = '0';
     if (previousValue.length <= 15) {
       currentDisplay.textContent = previousValue;
@@ -42,7 +42,11 @@ equals.addEventListener('click', () => {
 })
 
 decimal.addEventListener('click', () => {
-  addDecimal()
+  addDecimal();
+})
+
+undo.addEventListener('click', () => {
+  undoLastAction();
 })
 
 clear.addEventListener(('click'), () => {
@@ -105,6 +109,13 @@ function addDecimal(){
   }
 }
 
+function undoLastAction(){
+  currentValue = currentValue.substring(0, currentValue.length - 1);
+  currentDisplay.textContent = currentValue;
+  if (currentValue === ''){
+    currentDisplay.textContent = '0';
+  }
+}
 
 function add(a, b){
   return a + b
