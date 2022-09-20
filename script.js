@@ -29,6 +29,14 @@ operators.forEach((op) => {
   })
 })
 
+clear.addEventListener(('click'), () => {
+  previousDisplay.textContent = '0';
+  currentDisplay.textContent = '0';
+  previousValue = '';
+  currentValue = '';
+  lastOperator = '';
+})
+
 function handleNumber(num){
   if (currentValue.length <= 6){
     currentValue += num;
@@ -40,6 +48,19 @@ function handleOperator(op){
   previousValue = currentValue;
   currentValue = '';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function add(a, b){
   return a + b
