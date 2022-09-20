@@ -29,6 +29,10 @@ operators.forEach((op) => {
   })
 })
 
+equals.addEventListener('click', () => {
+  calculate()
+})
+
 clear.addEventListener(('click'), () => {
   previousDisplay.textContent = '0';
   currentDisplay.textContent = '0';
@@ -49,7 +53,39 @@ function handleOperator(op){
   currentValue = '';
 }
 
+function calculate(){
+  previousValue = +previousValue;
+  currentValue = +currentValue;
 
+  // if (lastOperator === '+'){
+  //   add(previousValue, currentValue)
+  // } else if (lastOperator === '−'){
+  //   subtract(previousValue, currentValue)
+  // } else if (lastOperator === '×'){
+  //   multiply(previousValue, currentValue)
+  // } else {
+  //   divide(previousValue, currentValue)
+  // }
+
+  if (lastOperator === '+') {
+    previousValue += currentValue
+  } else if (lastOperator === '−') {
+    previousValue -= currentValue
+  } else if (lastOperator === '×') {
+    previousValue *= currentValue
+  } else {
+    previousValue /= currentValue
+  }
+
+  previousValue = roundNumber(previousValue);
+  previousValue = previousValue.toString();
+  currentValue = currentValue.toString();
+  console.log(previousValue)
+}
+
+function roundNumber(num){
+  return Math.round(num * 1000) / 1000;
+}
 
 
 
