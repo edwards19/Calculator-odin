@@ -41,6 +41,10 @@ equals.addEventListener('click', () => {
   }
 })
 
+decimal.addEventListener('click', () => {
+  addDecimal()
+})
+
 clear.addEventListener(('click'), () => {
   previousDisplay.textContent = '0';
   currentDisplay.textContent = '0';
@@ -94,6 +98,13 @@ function calculate(){
 function roundNumber(num){
   return Math.round(num * 1000) / 1000;
 }
+
+function addDecimal(){
+  if (!currentValue.includes('.')){
+    currentValue += '.';
+  }
+}
+
 
 function add(a, b){
   return a + b
