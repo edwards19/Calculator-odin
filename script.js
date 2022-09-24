@@ -73,16 +73,6 @@ function calculate(){
   previousValue = +previousValue;
   currentValue = +currentValue;
 
-  // if (lastOperator === '+'){
-  //   add(previousValue, currentValue)
-  // } else if (lastOperator === '−'){
-  //   subtract(previousValue, currentValue)
-  // } else if (lastOperator === '×'){
-  //   multiply(previousValue, currentValue)
-  // } else {
-  //   divide(previousValue, currentValue)
-  // }
-
   if (lastOperator === '+') {
     previousValue += currentValue
   } else if (lastOperator === '−') {
@@ -115,20 +105,4 @@ function undoLastAction(){
   if (currentValue === ''){
     currentDisplay.textContent = '0';
   }
-}
-
-function add(a, b){
-  return a + b
-}
-
-function subtract(a, b){
-  return a - b
-}
-
-function multiply(a, b){
-  return a * b
-}
-
-function divide(a, b){
-  return a / b
 }
